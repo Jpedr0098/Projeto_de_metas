@@ -3,21 +3,9 @@ body {
 }
 
 #lista-de-tarefas {
-    /*mobile first*/
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
-
-    /* nesting css */
-    /*
-    @media (min-width: 500px){
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (min-width: 768px){
-        grid-template-columns: repeat(3, 1fr);
-    }
-    */
 }
 
 form{
