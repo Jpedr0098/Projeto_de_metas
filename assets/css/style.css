@@ -33,7 +33,5 @@ form{
 }
 
 .is-nivel {
-    display: flex;
-    flex-direction: column;
     align-content: space-around;
 }
