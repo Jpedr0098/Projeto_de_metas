@@ -4,7 +4,7 @@ body {
 
 #lista-de-tarefas {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 1.5rem;
 }
 
@@ -32,6 +32,16 @@ form{
     justify-content: space-around;
 }
 
-.is-nivel {
-    align-content: space-around;
+#progresso-geral {
+    margin: 2rem 1rem 2rem 1rem;
+}
+
+#progresso-geral div{
+    margin: 2rem 0 2rem 0;
+}
+
+.nes-badge {
+    display: inline-flex;
+    flex-direction: column;
+    width: 7.5em;
 }
