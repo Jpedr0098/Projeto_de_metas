@@ -1,6 +1,12 @@
 document.querySelector("#botao-cadastrar").addEventListener("click", () => {
 
     const form = document.querySelector("form")
+    const today = new Date()
+    const day = today.getDate()
+    const month = today.getMonth()+1
+    const year = today.getFullYear()
+    const date = String(year)+String(month)+String(day)
+
 
     const tarefa = {
         title: form.titulo.value,
@@ -11,9 +17,9 @@ document.querySelector("#botao-cadastrar").addEventListener("click", () => {
 
     validar(tarefa)
 
-    const today = new Date()
     
-    console.log(today)
+    
+    console.log(date)
 
     console.log(tarefa)
 })
