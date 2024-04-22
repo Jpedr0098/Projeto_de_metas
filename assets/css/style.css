@@ -45,3 +45,18 @@ form{
     flex-direction: column;
     width: 7.5em;
 }
+
+#buba-id {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: black;
+}
+
+#buba-id p{
+    max-width: 350px;
+}
+
+.nes-balloon {
+    padding: 0.5rem 1rem;
+}
