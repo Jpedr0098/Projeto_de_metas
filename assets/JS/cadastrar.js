@@ -5,10 +5,15 @@ document.querySelector("#botao-cadastrar").addEventListener("click", () => {
     const tarefa = {
         title: form.titulo.value,
         descricao: form.descricao.value,
-        pontos: form.pontos.value
+        pontos: form.pontos.value,
+        data: form.data.value
     }
 
     validar(tarefa)
+
+    const today = new Date()
+    
+    console.log(today)
 
     console.log(tarefa)
 })
@@ -17,11 +22,13 @@ function validar(tarefa){
     document.querySelector("#titulo").classList.remove("is-error")
     document.querySelector("#descricao").classList.remove("is-error")
     document.querySelector("#pontos").classList.remove("is-error")
+    document.querySelector("#data").classList.remove("is-error")
     document.querySelector("#titulo-erro").innerText = ""
     document.querySelector("#descricao-erro").innerText = ""
     document.querySelector("#pontos-erro").innerText = ""
+    document.querySelector("#data-erro").innerText = ""
 
-
+    
     
     if (tarefa.title.trim() == ""){
         document.querySelector("#titulo").classList.add("is-error")
