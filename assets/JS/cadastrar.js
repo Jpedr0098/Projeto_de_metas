@@ -1,12 +1,6 @@
 document.querySelector("#botao-cadastrar").addEventListener("click", () => {
 
     const form = document.querySelector("form")
-    const today = new Date()
-    const day = today.getDate()
-    const month = today.getMonth()+1
-    const year = today.getFullYear()
-    const date = String(year)+String(month)+String(day)
-
 
     const tarefa = {
         title: form.titulo.value,
@@ -14,12 +8,8 @@ document.querySelector("#botao-cadastrar").addEventListener("click", () => {
         pontos: form.pontos.value,
         data: form.data.value
     }
-
+    
     validar(tarefa)
-
-    
-    
-    console.log(date)
 
     console.log(tarefa)
 })
@@ -34,7 +24,8 @@ function validar(tarefa){
     document.querySelector("#pontos-erro").innerText = ""
     document.querySelector("#data-erro").innerText = ""
 
-    
+    const partesData = tarefa.data.split("-");
+    const dataRetida = new Date(partesData[0], partesData[1] - 1, partesData[2]);
     
     if (tarefa.title.trim() == ""){
         document.querySelector("#titulo").classList.add("is-error")
@@ -49,6 +40,11 @@ function validar(tarefa){
     if (tarefa.pontos <= 0){
         document.querySelector("#pontos").classList.add("is-error")
         document.querySelector("#pontos-erro").innerText = "Os pontos devem ser maiores que zero!"
+        console.log("Ta no erro irmão...")
+    }
+    if(dataRetida < new Date() || dataRetida == "Invalid Date"){
+        document.querySelector("#data").classList.add("is-error")
+        document.querySelector("#data-erro").innerText = "Coloque uma data maior que o dia de hoje!"
         console.log("Ta no erro irmão...")
     }
 }
