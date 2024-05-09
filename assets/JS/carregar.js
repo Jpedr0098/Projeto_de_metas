@@ -19,7 +19,7 @@ function card(tarefa){
             <a href="#" class="nes-badge">
                 <span class="is-primary">${data}</span>
             </a>
-            <progress class="nes-progress is-success" value="${tarefa.value}" max="100"></progress>
+            <progress class="nes-progress" value="${tarefa.value}" max="100"></progress>
             <button onClick="dec('${tarefa.id}')" type="button" class="nes-btn is-primary">-</button>
             <button onClick="apagar('${tarefa.id}')" type="button" class="nes-btn is-error">apagar</button>
             <button onClick="inc('${tarefa.id}')" type="button" class="nes-btn is-primary">+</button>
