@@ -7,7 +7,8 @@ document.querySelector("#botao-cadastrar").addEventListener("click", () => {
         title: form.titulo.value,
         descricao: form.descricao.value,
         pontos: form.pontos.value,
-        data: form.data.value
+        data: form.data.value,
+        value: 0
     }
     
     const erro = validar(tarefa)
