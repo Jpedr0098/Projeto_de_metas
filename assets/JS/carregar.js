@@ -4,6 +4,8 @@ tarefas.forEach(tarefa => { card(tarefa)})
 
 function card(tarefa){
 
+    const valor = tarefa.valor
+
     const dataForms = tarefa.data
     const dataSep = dataForms.split("-")
     const data = dataSep[1]+"/"+dataSep[2]
@@ -19,7 +21,7 @@ function card(tarefa){
             <a href="#" class="nes-badge">
                 <span class="is-primary">${data}</span>
             </a>
-            <progress class="nes-progress" value="${tarefa.value}" max="100"></progress>
+            <progress class="nes-progress" value="${valor}" max="100"></progress>
             <button onClick="dec('${tarefa.id}')" type="button" class="nes-btn is-primary">-</button>
             <button onClick="apagar('${tarefa.id}')" type="button" class="nes-btn is-error">apagar</button>
             <button onClick="inc('${tarefa.id}')" type="button" class="nes-btn is-primary">+</button>
@@ -29,4 +31,8 @@ function card(tarefa){
     card.id = tarefa.id
     card.innerHTML = cardTarefa
     document.querySelector("#lista-de-tarefas").appendChild(card)
+
+    document.querySelector("#progresso-geral progress").max +=100
+    document.querySelector("#progresso-geral progress").value += valor
 }
+    

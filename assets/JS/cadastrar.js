@@ -8,7 +8,7 @@ document.querySelector("#botao-cadastrar").addEventListener("click", () => {
         descricao: form.descricao.value,
         pontos: form.pontos.value,
         data: form.data.value,
-        value: 0,
+        valor: 0,
         tag: "is-error"
     }
     

@@ -4,4 +4,6 @@ function apagar(id) {
     localStorage.setItem("tarefas", JSON.stringify(tarefasAtualiazadas))
 
     document.querySelector("#"+id).remove()
+    
+    document.querySelector("#progresso-geral progress").max -=100
 }
