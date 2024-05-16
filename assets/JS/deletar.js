@@ -36,15 +36,16 @@ function menorData(){
         let item = tarefas.filter(tarefa => tarefa.pontos == teste)
         let card = item[0]
 
-        document.querySelector("#vencimento-meta").innerText = card.title+" - "+card.data
-        
-        const partesData = card.data.split("-");
-        const dataRetida = new Date(partesData[0], partesData[1] - 1, partesData[2]);
+        const frase = ["To decepcionado por deletar aquela meta em :(","Ta tirando com minha cara?! E as metas do ano?","Ta preguiçoso em..."]
+        const fraseRamdomica = frase[Math.floor(Math.random() * 3)]
 
-        if(dataRetida < new Date()) {
-            document.querySelector("#vencimento-meta").classList.remove("is-success")
-            document.querySelector("#vencimento-meta").classList.add("is-error")
+        document.querySelector("#buba-id p").innerText = fraseRamdomica
+        if (card != null) {
+            document.querySelector("#vencimento-meta").innerText = card.title+" - "+card.data
         }
+        else {
+            document.querySelector("#vencimento-meta").innerText = "Tudo certo por aqui!"
+        } 
     }  
 }
 

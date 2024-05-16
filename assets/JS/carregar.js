@@ -1,6 +1,7 @@
 const tarefas = JSON.parse(localStorage.getItem("tarefas")) || []
 
 tarefas.forEach(tarefa => { card(tarefa)})
+
 menorData()
 
 function card(tarefa){
@@ -52,18 +53,14 @@ function menorData(){
     let item = tarefas.filter(tarefa => tarefa.pontos == teste)
     let card = item[0]
 
-    document.querySelector("#vencimento-meta").innerText = card.title+" - "+card.data
-    
-    const partesData = card.data.split("-");
-    const dataRetida = new Date(partesData[0], partesData[1] - 1, partesData[2]);
-
-    document.querySelector("#vencimento-meta").classList.remove("is-error")
-    document.querySelector("#vencimento-meta").classList.add("is-success")
-
-    if(dataRetida < new Date()) {
-        document.querySelector("#vencimento-meta").classList.remove("is-success")
-        document.querySelector("#vencimento-meta").classList.add("is-error")
+    if (card != null) {
+        document.querySelector("#vencimento-meta").innerText = card.title+" - "+card.data
+        document.querySelector("#buba-id p").innerText = "Não vai esquecer da meta em..."
     }
+    else {
+        document.querySelector("#vencimento-meta").innerText = "Tudo certo por aqui!"
+        document.querySelector("#buba-id p").innerText = "Pode ficar suave meu parceiro!"
+    } 
 }
 
 function compare(a, b) {
